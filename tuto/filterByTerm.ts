@@ -7,7 +7,7 @@ function filterByTermOpt1(input: string[], searchTerm: string) {
     })
 }
 
-function filterByTermOpt2(input: Array<string>, searchTerm: string) {
+function filterByTermOpt2(input: Array<object>, searchTerm: string) {
     if (!searchTerm) throw Error("searchTerm cannot be empty");
     if (!input.length) throw Error ("inputArr cannot be empty");
     const regex = new RegExp(searchTerm, "i");
@@ -19,5 +19,5 @@ function filterByTermOpt2(input: Array<string>, searchTerm: string) {
 // filterByTermOpt1("input string", "java")
 // filterByTermOpt2("input string", "java")
 
-filterByTermOpt1(["input string"], "java")
-filterByTermOpt2(["input string"], "java")
+filterByTermOpt2([{url: "input string"}, {url: "string2"}], "java")
+// filterByTermOpt2(["input string"], "java")
